@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { FixproblemsComponent } from './fix-problems/fix-problems.component';
 import { FixProblemsService } from './services/fix-problems.service';
 import { ModalErrorComponent } from './modal-error/modal-error/modal-error.component';
+import { MatchersJasmineComponent } from './matchers-jasmine/matchers-jasmine.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FixproblemsComponent,
-    ModalErrorComponent
+    ModalErrorComponent,
+    MatchersJasmineComponent
   ],
   imports: [
     BrowserModule,
