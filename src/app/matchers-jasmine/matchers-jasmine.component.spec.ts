@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MatchersJasmineComponent } from './matchers-jasmine.component';
 
-fdescribe('MatchersJasmineComponent', () => {
+describe('MatchersJasmineComponent', () => {
   let component: MatchersJasmineComponent;
   let fixture: ComponentFixture<MatchersJasmineComponent>;
 

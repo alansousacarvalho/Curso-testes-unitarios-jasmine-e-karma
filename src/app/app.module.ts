@@ -11,13 +11,21 @@ import { FixproblemsComponent } from './fix-problems/fix-problems.component';
 import { FixProblemsService } from './services/fix-problems.service';
 import { ModalErrorComponent } from './modal-error/modal-error/modal-error.component';
 import { MatchersJasmineComponent } from './matchers-jasmine/matchers-jasmine.component';
+import { MockServiceComponent } from './mock-service/mock-service.component';
+import { StubComponent } from './stub/stub.component';
+import { HomeComponent } from './home/home.component';
+import { SpyonComponent } from './spyon/spyon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FixproblemsComponent,
     ModalErrorComponent,
-    MatchersJasmineComponent
+    MatchersJasmineComponent,
+    MockServiceComponent,
+    StubComponent,
+    HomeComponent,
+    SpyonComponent
   ],
   imports: [
     BrowserModule,
