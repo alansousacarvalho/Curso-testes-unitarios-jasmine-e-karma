@@ -21,10 +21,11 @@ describe('SpyonComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('deve logar ao clicar no botao', () => {
+  it('Deve logar ao clicar em um botão', () => {
     let spiedComponent = spyOn(component, 'isLogged').and.callThrough();
     component.isLogged();
-    
     expect(spiedComponent).toHaveBeenCalledTimes(1);
+    expect(component.logged).toBeTrue();
+
   });
 });

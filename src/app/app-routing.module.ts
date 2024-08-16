@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { StubComponent } from './stub/stub.component';
 import { SpyonComponent } from './spyon/spyon.component';
 import { MockServiceComponent } from './mock-service/mock-service.component';
+import { RequestComponent } from './request/request.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'stub',
     component: StubComponent
+  },
+  {
+    path: 'request',
+    component: RequestComponent
   },
   {
     path: 'spyon',
