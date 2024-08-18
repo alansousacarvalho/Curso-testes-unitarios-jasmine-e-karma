@@ -7,6 +7,7 @@ import { StubComponent } from './stub/stub.component';
 import { SpyonComponent } from './spyon/spyon.component';
 import { MockServiceComponent } from './mock-service/mock-service.component';
 import { RequestComponent } from './request/request.component';
+import { AssincronoComponent } from './assincrono/assincrono.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'request',
     component: RequestComponent
+  },
+  {
+    path: 'assincrono',
+    component: AssincronoComponent
   },
   {
     path: 'spyon',

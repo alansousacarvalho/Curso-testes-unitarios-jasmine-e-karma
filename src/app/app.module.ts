@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { SpyonComponent } from './spyon/spyon.component';
 import { SpyonpropertyComponent } from './spyonproperty/spyonproperty.component';
 import { RequestComponent } from './request/request.component';
+import { AssincronoComponent } from './assincrono/assincrono.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RequestComponent } from './request/request.component';
     HomeComponent,
     SpyonComponent,
     SpyonpropertyComponent,
-    RequestComponent
+    RequestComponent,
+    AssincronoComponent
   ],
   imports: [
     BrowserModule,
