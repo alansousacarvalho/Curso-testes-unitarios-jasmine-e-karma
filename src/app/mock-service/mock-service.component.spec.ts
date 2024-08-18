@@ -25,6 +25,7 @@ describe('MockServiceComponent', () => {
     fixture = TestBed.createComponent(MockServiceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    router = TestBed.inject(Router);
   });
 
   it('should create', () => {

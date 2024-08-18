@@ -25,6 +25,7 @@ describe('SpyonComponent', () => {
     fixture = TestBed.createComponent(SpyonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    router = TestBed.inject(Router);
   });
 
   it('should create', () => {
