@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpService } from './http.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-fdescribe('HttpService', () => {
+describe('HttpService', () => {
   let service: HttpService;
   let httpTestingController: HttpTestingController;
   let url: any;
@@ -27,18 +27,19 @@ fdescribe('HttpService', () => {
     const id = 3;
     const response = {
       name: 'danilo',
-      age: 30,
-      email: 'danilo@gmail.com'
-    } 
+      email: 'danilo@gmail.com',
+      age: 30
+    };
 
     service.getUsersById(id).subscribe(res => {
-      expect(res).toBe(response);
+      expect(res).toBe(response)
     });
 
     const request = httpTestingController.expectOne(`${url}/users/${id}`);
 
     expect(request.request.method).toBe('GET');
     expect(request.request.url).toBe(`${url}/users/${id}`);
-    request.flush(response)
-  })
+
+    request.flush(response);
+  });
 });
