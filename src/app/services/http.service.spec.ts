@@ -42,4 +42,49 @@ describe('HttpService', () => {
 
     request.flush(response);
   });
+
+  it('Deve realizar uma chama GET para obter usuarios', () => {
+    service.getUsers().subscribe();
+    const request = httpTestingController.expectOne(`${url}/users`)
+    request.flush({});
+    expect(request.request.method).toBe('GET');
+    expect(request.request.url).toBe(`${url}/users`);
+  });
+
+  it('Deve gerar erro ao obter usuarios', () => {
+    service.getUsers().subscribe({
+      error: err => {
+        expect(err).toBe(500);
+      }
+    });
+    const request = httpTestingController.expectOne(`${url}/users`);
+    expect(request.request.method).toBe('GET');
+    expect(request.request.url).toBe(`${url}/users`);
+    request.flush({
+      status: 500,
+      statusText: 'Erro na rede'
+    });
+  })
+
+  it('Deve fazer req. POST para cadastrar usuario', () => {
+    const user = {};
+    const response = {};
+
+    service.postUser(user).subscribe(res => {
+      expect(res).toBe(response);
+    });
+
+    const request = httpTestingController.expectOne(`${url}/users`);
+    expect(request.request.method).toBe('POST');
+    expect(request.request.url).toBe(`${url}/users`);
+    request.flush(response)
+  })
+
+  it('Deve conter headers na requisição', () => {
+    service.getUserWithHeaders().subscribe();
+    const request = httpTestingController.expectOne(`${url}/users`);
+    expect(request.request.headers.has('Content-type')).toEqual(true);
+    expect(request.request.headers.has('Authorization')).toEqual(true);
+
+  })
 });

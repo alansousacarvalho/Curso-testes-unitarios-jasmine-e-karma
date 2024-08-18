@@ -1,3 +1,13 @@
 <h1>Testando requisições HTTP</h1>
 
 <button (click)="getUsersByID(3)">GET por id</button>
+
+<form [formGroup]="form">
+  <input type="text" formControlName="name" placeholder="Digite o nome">
+  <input type="text" formControlName="email" placeholder="Digite o email">
+  <input type="text" formControlName="age" placeholder="Digite a idade">
+
+  <br>
+  <br>
+  <button (click)="postUsers()">Fazer chamada POST</button>
+</form>

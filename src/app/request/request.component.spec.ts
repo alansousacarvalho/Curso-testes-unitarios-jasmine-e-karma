@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RequestComponent } from './request.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('RequestComponent', () => {
   let component: RequestComponent;
@@ -11,7 +12,9 @@ describe('RequestComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ RequestComponent ],
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        FormsModule,
+        ReactiveFormsModule
       ]
     })
     .compileComponents();
