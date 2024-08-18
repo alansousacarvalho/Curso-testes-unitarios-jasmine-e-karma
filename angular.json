@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "curso-angular-meus-testes-unitarios:build:production"
+              "buildTarget": "curso-angular-meus-testes-unitarios:build:production"
             },
             "development": {
-              "browserTarget": "curso-angular-meus-testes-unitarios:build:development"
+              "buildTarget": "curso-angular-meus-testes-unitarios:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "curso-angular-meus-testes-unitarios:build"
+            "buildTarget": "curso-angular-meus-testes-unitarios:build"
           }
         },
         "test": {
