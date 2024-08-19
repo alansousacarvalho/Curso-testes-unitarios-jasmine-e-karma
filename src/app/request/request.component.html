@@ -25,3 +25,30 @@
 
   <button pButton label="Submit" class="mt-2" label="Fazer chamada POST" (click)="postUsers()"></button>
 </form>
+<p-divider></p-divider>
+
+<h2>PUT e DELETE</h2>
+
+<p-table [value]="listaUsuarios" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th>Ano</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-usuario>
+    <tr class="mb-2">
+      <td>{{ usuario.name }}</td>
+      <td>{{ usuario.email }}</td>
+      <td>{{ usuario.age }}</td>
+      <td>
+        <p-button icon="pi pi-pencil" class="pe-3" [rounded]="true" [text]="true" [raised]="true" severity="success" (click)="abrirModalAtualizarUsuario(usuario)"></p-button>
+        <button pButton icon="pi pi-trash" type="text" title="Deletar" [rounded]="true" [text]="true" [raised]="true" severity="danger" (click)="deleteUser(usuario.id)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<alterar-usuario (fecharModalChange)="fecharModalAtualizarUsuario($event)" [usuarioASerAlterado]="usuarioASerAlterado" [mostrarAlterarUsuario]="mostrarAlterarUsuario"></alterar-usuario>

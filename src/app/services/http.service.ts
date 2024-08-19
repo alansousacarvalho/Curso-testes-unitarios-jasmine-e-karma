@@ -40,6 +40,14 @@ export class HttpService {
     return this.http.post(`${this.url}/users`, user);
   }
 
+  putUser(id: number, user: any) {
+    return this.http.put(`${this.url}/users/${id}`, user);
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete(`${this.url}/users/${id}`);
+  }
+
   getUserWithHeaders() {
     const token = "123456";
     const headers = new HttpHeaders()

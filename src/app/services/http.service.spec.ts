@@ -95,6 +95,32 @@ describe('HttpService', () => {
     });
   })
 
+  it('Deve atualizar o usuario com PUT', () => {
+    const id = 0.8230837961873159;
+    const usuario = {
+      "name": "Ana",
+      "email": "anna.mendes08@outlook.com",
+      "age": "50",
+      "id": "0.8230837961873159"
+    }
+    const response = {
+      "name": "Ana",
+      "email": "anna.mendes08@outlook.com",
+      "age": "50",
+      "id": "0.8230837961873159"
+    }
+
+    service.putUser(id, usuario).subscribe(res => {
+      expect(res).toBe(response)
+    });
+
+    const request = httpTestingController.expectOne(`${url}/users/${id}`);
+    expect(request.request.method).toBe('PUT');
+    expect(request.request.url).toBe(`${url}/users/${id}`);
+
+    request.flush(response)
+  });
+
   it('Deve incluir um novo user ao fazer o POST', () => {
     //Payload enviado pelo formulário
     const user = {
@@ -118,6 +144,25 @@ describe('HttpService', () => {
 
     expect(request.request.method).toBe('POST');
     expect(request.request.url).toBe(`${url}/users`);
+  });
+
+  it('Deve excluir um usuario', () => {
+    const id = 5;
+    const response = {
+      "id": "5",
+      "name": "Ana",
+      "email": "ana@outlook.com",
+      "age": "18"
+    };
+    service.deleteUser(id).subscribe(res => {
+      expect(res).toBe(response);
+    });
+
+    const request = httpTestingController.expectOne(`${url}/users/${id}`);
+    expect(request.request.method).toBe('DELETE');
+    expect(request.request.url).toBe(`${url}/users/${id}`);
+
+    request.flush(response);
   });
 
   it('Deve conter headers na requisição', () => {

@@ -6,6 +6,8 @@ import { AppComponent } from "src/app/app.component";
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { DividerModule } from 'primeng/divider';
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [],
@@ -14,12 +16,16 @@ import { DividerModule } from 'primeng/divider';
     BrowserAnimationsModule,
     ButtonModule,
     InputTextModule,
-    DividerModule
+    DividerModule,
+    TableModule,
+    DialogModule,
   ],
   exports: [
     ButtonModule,
     InputTextModule,
-    DividerModule
+    DividerModule,
+    TableModule,
+    DialogModule,
   ],
   bootstrap: [AppComponent]
 })

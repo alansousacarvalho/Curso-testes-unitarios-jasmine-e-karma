@@ -19,6 +19,7 @@ import { SpyonpropertyComponent } from './spyonproperty/spyonproperty.component'
 import { RequestComponent } from './request/request.component';
 import { AssincronoComponent } from './assincrono/assincrono.component';
 import { PrimeNgModule } from 'src/shared/primeng.module';
+import { AlterarUsuarioComponent } from './request/alterar-usuario/alterar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PrimeNgModule } from 'src/shared/primeng.module';
     SpyonComponent,
     SpyonpropertyComponent,
     RequestComponent,
-    AssincronoComponent
+    AssincronoComponent,
+    AlterarUsuarioComponent
   ],
   imports: [
     BrowserModule,
