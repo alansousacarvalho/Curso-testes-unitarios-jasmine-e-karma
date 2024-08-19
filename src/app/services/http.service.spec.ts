@@ -15,7 +15,7 @@ describe('HttpService', () => {
       ]
     });
     service = TestBed.inject(HttpService);
-    httpTestingController = TestBed.inject(HttpTestingController)
+    httpTestingController = TestBed.inject(HttpTestingController);
     url = 'http://localhost:3000';
   });
 
@@ -44,13 +44,41 @@ describe('HttpService', () => {
     request.flush(response);
   });
 
-  // it('Deve realizar uma chama GET para obter usuarios', () => {
-  //   service.getUsers().subscribe();
-  //   const request = httpTestingController.expectOne(`${url}/users`)
-  //   request.flush({});
-  //   expect(request.request.method).toBe('GET');
-  //   expect(request.request.url).toBe(`${url}/users`);
-  // });
+  it('Deve realizar uma chama GET para obter usuarios', () => {
+    const response = [
+      {
+        "name": "Danilo 2",
+        "email": "danilo@gmail.com",
+        "age": "30",
+        "id": "1"
+      },
+      {
+        "id": "3",
+        "name": "Joao",
+        "email": "joao@gmail.com",
+        "age": 22
+      },
+      {
+        "id": "4",
+        "name": "Joao",
+        "email": "joao@gmail.com",
+        "age": 22
+      },
+      {
+        "id": "0.8230837961873159",
+        "name": "Danilo ",
+        "email": "danilo@gmail.com",
+        "age": "30"
+      }
+    ]
+    service.getUsers().subscribe(res => {
+      expect(res).toBe(response);
+    });
+    const request = httpTestingController.expectOne(`${url}/users`)
+    request.flush(response);
+    expect(request.request.method).toBe('GET');
+    expect(request.request.url).toBe(`${url}/users`);
+  });
 
   it('Deve gerar erro ao obter usuarios', () => {
     service.getUsers().subscribe({
@@ -67,19 +95,30 @@ describe('HttpService', () => {
     });
   })
 
-  it('Deve fazer req. POST para cadastrar usuario', () => {
-    const user = {};
-    const response = {};
-
+  it('Deve incluir um novo user ao fazer o POST', () => {
+    //Payload enviado pelo formulário
+    const user = {
+      "name": "Alan",
+      "email": "alan@outlook.com",
+      "age": "25",
+      "id": 0.15829535929003558
+    }
+    //Resposta retornada pela API
+    const response = {
+      "id": 0.15829535929003558,
+      "name": "Alan",
+      "email": "alan@outlook.com",
+      "age": "25"
+    }
     service.postUser(user).subscribe(res => {
       expect(res).toBe(response);
     });
-
     const request = httpTestingController.expectOne(`${url}/users`);
+    request.flush(response)
+
     expect(request.request.method).toBe('POST');
     expect(request.request.url).toBe(`${url}/users`);
-    request.flush(response)
-  })
+  });
 
   it('Deve conter headers na requisição', () => {
     service.getUserWithHeaders().subscribe();

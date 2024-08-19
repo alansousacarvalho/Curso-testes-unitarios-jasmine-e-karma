@@ -23,6 +23,12 @@
       "name": "Danilo ",
       "email": "danilo@gmail.com",
       "age": "30"
+    },
+    {
+      "id": 0.15829535929003558,
+      "name": "Alan",
+      "email": "alan@outlook.com",
+      "age": "25"
     }
   ],
   "login": [

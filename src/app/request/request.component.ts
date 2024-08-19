@@ -21,7 +21,8 @@ export class RequestComponent implements OnInit {
     this.form = this.fb.group({
       name: null,
       email: null,
-      age: null
+      age: null,
+      id: null
     })
   }
 
@@ -36,6 +37,9 @@ export class RequestComponent implements OnInit {
   }
 
   postUsers() {
+    this.form.patchValue({
+      id: Math.random()
+    })
     this.httpService.postUser(this.form.value).subscribe();
   }
 
