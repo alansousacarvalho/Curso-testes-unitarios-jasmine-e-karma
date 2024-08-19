@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AssincronoComponent } from './assincrono.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientTestingModule, provideHttpClientTesting } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 import { HttpService } from '../services/http.service';
+import { provideHttpClient } from '@angular/common/http';
 
-fdescribe('AssincronoComponent', () => {
+describe('AssincronoComponent', () => {
   let component: AssincronoComponent;
   let fixture: ComponentFixture<AssincronoComponent>;
   let http: HttpService;
@@ -13,8 +14,9 @@ fdescribe('AssincronoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AssincronoComponent],
-      imports: [
-        HttpClientTestingModule
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting() 
       ]
     })
       .compileComponents();
@@ -35,27 +37,27 @@ fdescribe('AssincronoComponent', () => {
   //       "name": "Danilo 2",
   //       "email": "danilo@gmail.com",
   //       "age": "30",
-  //       "id": 1
+  //       "id": "1"
   //     },
   //     {
-  //       "id": 3,
+  //       "id": "3",
   //       "name": "Joao",
   //       "email": "joao@gmail.com",
   //       "age": 22
   //     },
   //     {
-  //       "id": 4,
+  //       "id": "4",
   //       "name": "Joao",
   //       "email": "joao@gmail.com",
   //       "age": 22
   //     },
   //     {
-  //       "id": 0.8230837961873159,
+  //       "id": "0.8230837961873159",
   //       "name": "Danilo ",
   //       "email": "danilo@gmail.com",
   //       "age": "30"
   //     }
-  //   ];
+  //   ]
 
   //   spyOn(http, 'getUsers').and.returnValue(of(response));
 
@@ -63,33 +65,33 @@ fdescribe('AssincronoComponent', () => {
   // });
 
   it('Deve testar uma promisse', () => {
-      const response = [
-        {
-          "name": "Danilo 2",
-          "email": "danilo@gmail.com",
-          "age": "30",
-          "id": 1
-        },
-        {
-          "id": 3,
-          "name": "Joao",
-          "email": "joao@gmail.com",
-          "age": 22
-        },
-        {
-          "id": 4,
-          "name": "Joao",
-          "email": "joao@gmail.com",
-          "age": 22
-        },
-        {
-          "id": 0.8230837961873159,
-          "name": "Danilo ",
-          "email": "danilo@gmail.com",
-          "age": "30"
-        }
-      ];
+    const response = [
+      {
+        "name": "Danilo 2",
+        "email": "danilo@gmail.com",
+        "age": "30",
+        "id": 1
+      },
+      {
+        "id": 3,
+        "name": "Joao",
+        "email": "joao@gmail.com",
+        "age": 22
+      },
+      {
+        "id": 4,
+        "name": "Joao",
+        "email": "joao@gmail.com",
+        "age": 22
+      },
+      {
+        "id": 0.8230837961873159,
+        "name": "Danilo ",
+        "email": "danilo@gmail.com",
+        "age": "30"
+      }
+    ];
 
-      spyOn(http, 'getUsersWithPromise').and.returnValue(Promise.resolve(response));
+    spyOn(http, 'getUsersWithPromise').and.returnValue(Promise.resolve(response));
   })
 });

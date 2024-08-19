@@ -1,7 +1,7 @@
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -18,6 +18,7 @@ import { SpyonComponent } from './spyon/spyon.component';
 import { SpyonpropertyComponent } from './spyonproperty/spyonproperty.component';
 import { RequestComponent } from './request/request.component';
 import { AssincronoComponent } from './assincrono/assincrono.component';
+import { PrimeNgModule } from 'src/shared/primeng.module';
 
 @NgModule({
   declarations: [
@@ -40,10 +41,14 @@ import { AssincronoComponent } from './assincrono/assincrono.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    PrimeNgModule,
   ],
   providers: [
     FixProblemsService
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   bootstrap: [AppComponent]
 })

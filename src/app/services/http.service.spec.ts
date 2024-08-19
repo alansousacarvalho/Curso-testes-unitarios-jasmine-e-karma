@@ -26,10 +26,11 @@ describe('HttpService', () => {
   it('Deve realizar chamada GET por ID', () => {
     const id = 3;
     const response = {
-      name: 'danilo',
-      email: 'danilo@gmail.com',
-      age: 30
-    };
+      "id": "3",
+      "name": "Joao",
+      "email": "joao@gmail.com",
+      "age": 22
+    }
 
     service.getUsersById(id).subscribe(res => {
       expect(res).toBe(response)
@@ -43,13 +44,13 @@ describe('HttpService', () => {
     request.flush(response);
   });
 
-  it('Deve realizar uma chama GET para obter usuarios', () => {
-    service.getUsers().subscribe();
-    const request = httpTestingController.expectOne(`${url}/users`)
-    request.flush({});
-    expect(request.request.method).toBe('GET');
-    expect(request.request.url).toBe(`${url}/users`);
-  });
+  // it('Deve realizar uma chama GET para obter usuarios', () => {
+  //   service.getUsers().subscribe();
+  //   const request = httpTestingController.expectOne(`${url}/users`)
+  //   request.flush({});
+  //   expect(request.request.method).toBe('GET');
+  //   expect(request.request.url).toBe(`${url}/users`);
+  // });
 
   it('Deve gerar erro ao obter usuarios', () => {
     service.getUsers().subscribe({

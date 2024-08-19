@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class RequestComponent implements OnInit {
   form: FormGroup;
+  listaUsuarios: any;
 
   constructor(
     private httpService: HttpService,
@@ -22,6 +23,12 @@ export class RequestComponent implements OnInit {
       email: null,
       age: null
     })
+  }
+
+  getUsers() {
+    this.httpService.getUsers().subscribe(res => {
+      this.listaUsuarios = res;
+    });
   }
 
   getUsersByID(id: number) {

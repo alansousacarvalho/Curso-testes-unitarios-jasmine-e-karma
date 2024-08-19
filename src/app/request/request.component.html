@@ -1,13 +1,27 @@
 <h1>Testando requisições HTTP</h1>
 
-<button (click)="getUsersByID(3)">GET por id</button>
+<h2>Get</h2>
+<button pButton pRipple label="Submit" class="mt-2 mb-3 p-2" label="Listar usuários" (click)="getUsers()"></button>
+
+<ul *ngIf="listaUsuarios !== undefined">
+  <li class="ps-2" *ngFor="let usuario of listaUsuarios">
+    <p>{{ usuario.name }}</p>
+  </li>
+</ul>
+<p-divider></p-divider>
+
+<h2>Get por ID</h2>
+<button pButton pRipple label="Submit" class="my-2 p-2" label="GET por id" (click)="getUsersByID(3)"></button>
+<p-divider></p-divider>
+
+<h2>POST</h2>
 
 <form [formGroup]="form">
-  <input type="text" formControlName="name" placeholder="Digite o nome">
-  <input type="text" formControlName="email" placeholder="Digite o email">
-  <input type="text" formControlName="age" placeholder="Digite a idade">
+  <div class="row">
+    <input formControlName="name" pInputText class="col-lg-2" type="text" placeholder="Digite o nome">
+    <input formControlName="email" pInputText class="col-lg-2" type="text" placeholder="Digite o email">
+    <input formControlName="age" pInputText class="col-lg-2" type="text" placeholder="Digite a idade">
+  </div>
 
-  <br>
-  <br>
-  <button (click)="postUsers()">Fazer chamada POST</button>
+  <button pButton label="Submit" class="mt-2" label="Fazer chamada POST" (onClick)="postUsers()"></button>
 </form>
