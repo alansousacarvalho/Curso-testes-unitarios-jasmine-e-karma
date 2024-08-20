@@ -16,7 +16,7 @@ describe('AssincronoComponent', () => {
       declarations: [AssincronoComponent],
       providers: [
         provideHttpClient(),
-        provideHttpClientTesting() 
+        provideHttpClientTesting()
       ]
     })
       .compileComponents();
@@ -31,67 +31,37 @@ describe('AssincronoComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('Deve fazer request para o obter lista de usuarios', () => {
-  //   const response = [
-  //     {
-  //       "name": "Danilo 2",
-  //       "email": "danilo@gmail.com",
-  //       "age": "30",
-  //       "id": "1"
-  //     },
-  //     {
-  //       "id": "3",
-  //       "name": "Joao",
-  //       "email": "joao@gmail.com",
-  //       "age": 22
-  //     },
-  //     {
-  //       "id": "4",
-  //       "name": "Joao",
-  //       "email": "joao@gmail.com",
-  //       "age": 22
-  //     },
-  //     {
-  //       "id": "0.8230837961873159",
-  //       "name": "Danilo ",
-  //       "email": "danilo@gmail.com",
-  //       "age": "30"
-  //     }
-  //   ]
-
-  //   spyOn(http, 'getUsers').and.returnValue(of(response));
-
-  //   expect(component.data).toEqual(response);
-  // });
-
-  it('Deve testar uma promisse', () => {
+  it('Deve fazer request para o obter lista de usuarios', () => {
     const response = [
       {
-        "name": "Danilo 2",
-        "email": "danilo@gmail.com",
-        "age": "30",
-        "id": 1
-      },
+        "id": "1",
+        "name": "Alan",
+        "email": "alan@outlook.com",
+        "age": "25"
+      }
+    ];
+
+    spyOn(http, "getUsers").and.returnValue(of(response));
+    component.getUsers();
+
+    expect(component.data).toEqual(response);
+  });
+
+  it('Deve testar uma promise', async() => {
+    const response = [
       {
-        "id": 3,
-        "name": "Joao",
-        "email": "joao@gmail.com",
-        "age": 22
-      },
-      {
-        "id": 4,
-        "name": "Joao",
-        "email": "joao@gmail.com",
-        "age": 22
-      },
-      {
-        "id": 0.8230837961873159,
-        "name": "Danilo ",
-        "email": "danilo@gmail.com",
-        "age": "30"
+        "id": "1",
+        "name": "Alan",
+        "email": "alan@outlook.com",
+        "age": "25"
       }
     ];
 
     spyOn(http, 'getUsersWithPromise').and.returnValue(Promise.resolve(response));
+
+    await component.getUsersWithPromise();
+
+    expect(component.dataPromise).toEqual(response);
+
   })
 });

@@ -1,7 +1,13 @@
 <h1>Testando comportamentos assíncronos</h1>
 
-<ul>
-  <li>Subscribe</li>
-</ul>
+<h2>Subscribe</h2>
 
-<button (click)="getUsers()">Fazer chamada Assíncrona</button>
+<button pButton (click)="getUsers()">Fazer chamada Assíncrona</button>
+
+<p-divider></p-divider>
+
+<h2>Promise</h2>
+
+<button pButton (click)="getUsersWithPromise()">Fazer chamada Assíncrona Promise</button>
+
+<p-divider></p-divider>
