@@ -1,0 +1,37 @@
+<h1>Teste Componente</h1>
+
+<h2>Teste com DebugElement.query()</h2>
+
+<p>Teste conteudo paragrafo</p>
+
+<button class="confirmar">Sim</button>
+
+<p-divider></p-divider>
+
+<h3>{{ title }}</h3>
+
+<p-divider></p-divider>
+
+<!-- Nessa sessão, é ensinado a usar o ComponentFixtureAutoDetect, para não precisar
+mais declarar o fixture.detectChanges() e detectar a mudança nos componentes de forma automática -->
+<h2>Detecção automática de alterações</h2>
+
+<p-divider></p-divider>
+
+<h2>Disparando clico no botao com TriggerEventHandler</h2>
+
+<h4>{{ emoji }}</h4>
+<button pButton (click)="setarEmoji()" label="Setar emoji"></button>
+
+<p-divider></p-divider>
+
+<h2>Preenchendo formulários disparando evento Input</h2>
+
+<input [(ngModel)]="nomeNgModel" pInputText type="text" placeholder="Nome" class="d-block mb-2">
+<button pButton (click)="setarFormulario()" label="Preencher formulario"></button>
+
+<p-divider></p-divider>
+
+<h2>Testando Input e Output</h2>
+
+<input-output [usuario]="usuario" (mensagemUsuario)="mensagemDoUsuario($event)"></input-output>
