@@ -22,6 +22,12 @@ import { PrimeNgModule } from 'src/shared/primeng.module';
 import { AlterarUsuarioComponent } from './request/alterar-usuario/alterar-usuario.component';
 import { TesteComponenteComponent } from './teste-componente/teste-componente.component';
 import { InputOutputComponent } from './teste-componente/input-output/input-output.component';
+import { HttpPipe } from 'src/shared/pipes/http.pipe';
+import { TestingPipesDiretiveRouteComponent } from './testing-pipes-diretive-route/testing-pipes-diretive-route.component';
+import { LoginComponent } from './login/login.component';
+import { ExtratoComponent } from './extrato/extrato.component';
+import { TestandoDiretivasComponent } from './testando-diretivas/testando-diretivas.component';
+import { HoverFocusDirective } from 'src/shared/directive/hoverfocus.directive';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,12 @@ import { InputOutputComponent } from './teste-componente/input-output/input-outp
     AssincronoComponent,
     AlterarUsuarioComponent,
     TesteComponenteComponent,
-    InputOutputComponent
+    InputOutputComponent,
+    TestingPipesDiretiveRouteComponent,
+    HttpPipe,
+    LoginComponent,
+    ExtratoComponent,
+    TestandoDiretivasComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +62,8 @@ import { InputOutputComponent } from './teste-componente/input-output/input-outp
     PrimeNgModule,
   ],
   providers: [
-    FixProblemsService
+    FixProblemsService,
+    HttpPipe
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

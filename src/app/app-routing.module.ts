@@ -9,11 +9,17 @@ import { MockServiceComponent } from './mock-service/mock-service.component';
 import { RequestComponent } from './request/request.component';
 import { AssincronoComponent } from './assincrono/assincrono.component';
 import { TesteComponenteComponent } from './teste-componente/teste-componente.component';
+import { TestingPipesDiretiveRouteComponent } from './testing-pipes-diretive-route/testing-pipes-diretive-route.component';
+import { GuardGuard } from 'src/shared/guard/guard.guard';
+import { LoginComponent } from './login/login.component';
+import { ExtratoComponent } from './extrato/extrato.component';
+import { TestandoDiretivasComponent } from './testando-diretivas/testando-diretivas.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [GuardGuard]
   },
   {
     path: 'fix-problems',
@@ -38,6 +44,22 @@ const routes: Routes = [
   {
     path: 'teste-componente',
     component: TesteComponenteComponent
+  },
+  {
+    path: 'pipes-rotas-diretivas',
+    component: TestingPipesDiretiveRouteComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'extrato',
+    component: ExtratoComponent
+  },
+  {
+    path: 'teste-diretiva',
+    component: TestandoDiretivasComponent
   },
   {
     path: 'spyon',
