@@ -12,6 +12,11 @@
       "email": "danilodev.silva@gmail.com",
       "password": "09101",
       "id": "1"
+    },
+    {
+      "id": "fd66",
+      "email": "alan@outlook.com",
+      "password": "123456"
     }
   ]
 }

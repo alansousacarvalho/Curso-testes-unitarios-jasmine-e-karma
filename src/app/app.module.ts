@@ -28,6 +28,7 @@ import { LoginComponent } from './login/login.component';
 import { ExtratoComponent } from './extrato/extrato.component';
 import { TestandoDiretivasComponent } from './testando-diretivas/testando-diretivas.component';
 import { HoverFocusDirective } from 'src/shared/directive/hoverfocus.directive';
+import { FormLoginComponent } from './form-login/form-login.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { HoverFocusDirective } from 'src/shared/directive/hoverfocus.directive';
     HttpPipe,
     LoginComponent,
     ExtratoComponent,
-    TestandoDiretivasComponent
+    TestandoDiretivasComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,

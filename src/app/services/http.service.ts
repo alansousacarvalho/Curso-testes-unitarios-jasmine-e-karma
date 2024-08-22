@@ -56,4 +56,8 @@ export class HttpService {
 
     return this.http.get(`${this.url}/users`, { headers })
   }
+
+  login(payload: any) {
+    return this.http.post(`${this.url}/login`, payload)
+  }
 }

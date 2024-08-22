@@ -14,6 +14,7 @@ import { GuardGuard } from 'src/shared/guard/guard.guard';
 import { LoginComponent } from './login/login.component';
 import { ExtratoComponent } from './extrato/extrato.component';
 import { TestandoDiretivasComponent } from './testando-diretivas/testando-diretivas.component';
+import { FormLoginComponent } from './form-login/form-login.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'teste-diretiva',
     component: TestandoDiretivasComponent
+  },
+  {
+    path: 'form-login',
+    component: FormLoginComponent
   },
   {
     path: 'spyon',

@@ -1,0 +1,7 @@
+<h1>Testando se formulário é invalido</h1>
+
+<form [formGroup]="form">
+  <input formControlName="email" pInputText type="text" placeholder="Digite o e-mail" class="d-block mb-2">
+  <input formControlName="password" pInputText type="text" placeholder="Digite a senha" class="d-block mb-2">
+  <button id="fazer-login" pButton type="submit" label="Fazer login" [disabled]="form.invalid" (click)="login()"></button>
+</form>
