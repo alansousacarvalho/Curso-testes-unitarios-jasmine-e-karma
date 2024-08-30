@@ -7,7 +7,7 @@
  Abra a pasta aonde pretende salvar os arquivos, abra o prompt de comando e cole o código abaixo:
  
  ```
- git clone https://github.com/alansousacarvalho/Testes-unitarios-Jasmine-e-Karma.git
+ git clone https://github.com/alansousacarvalho/Curso-testes-unitarios-jasmine-e-karma.git
 ```
 
 Instale as dependências
