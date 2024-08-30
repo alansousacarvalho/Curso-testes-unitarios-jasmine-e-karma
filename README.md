@@ -1,6 +1,7 @@
-# Testes unitários - Jasmine e Karma com Angular 14
+# Testes unitários - Jasmine e Karma com Angular 18
 
 - Repositório responsável pelo conteúdo aprendido no curso.
+- Será necessário a instalação do Node com a versão 18.19.0.
 
 ### Clonando e configurando
  Abra a pasta aonde pretende salvar os arquivos, abra o prompt de comando e cole o código abaixo:
@@ -30,7 +31,7 @@ a aplicação estará disponível no endereço:
 
 ### Rodando os testes
 
-Para visualizar os testes no navegador digite o coimando a baixo:
+Para visualizar os testes no navegador digite o comando a baixo:
 
 ```
  ng test
