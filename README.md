@@ -3,7 +3,7 @@
 - Repositório responsável pelo conteúdo aprendido no curso.
 
 ### Clonando e configurando
- Abra o prompt de comando e cole o código abaixo:
+ Abra a pasta aonde pretende salvar os arquivos, abra o prompt de comando e cole o código abaixo:
  
  ```
  git clone https://github.com/alansousacarvalho/Testes-unitarios-Jasmine-e-Karma.git
