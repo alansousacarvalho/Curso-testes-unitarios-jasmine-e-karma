@@ -31,7 +31,7 @@ describe('FixproblemsComponent', () => {
   });
 
   it('should create', () => {
-    let data = {name: 'Danilo'}
+    let data = { name: 'Danilo' }
     expect(component).toBeTruthy();
   });
 });

@@ -1,10 +1,22 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": "21",
+      "name": "Ana",
+      "email": "ana@outlook.com",
+      "age": "18"
+    },
+    {
+      "id": "44",
       "name": "Alan",
       "email": "alan@outlook.com",
       "age": "25"
+    },
+    {
+      "id": 36,
+      "name": "Erinthon",
+      "email": "erinhton@gmail.com",
+      "age": "20"
     }
   ],
   "login": [

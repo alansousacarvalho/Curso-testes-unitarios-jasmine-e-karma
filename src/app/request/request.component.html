@@ -11,7 +11,7 @@
 <p-divider></p-divider>
 
 <h2>Get por ID</h2>
-<button pButton pRipple label="Submit" class="my-2 p-2" label="GET por id" (click)="getUsersByID(3)"></button>
+<button pButton pRipple label="Submit" id="getPorId" class="my-2 p-2" label="GET por id" (click)="getUsersByID(1)"></button>
 <p-divider></p-divider>
 
 <h2>POST</h2>
@@ -45,7 +45,7 @@
       <td>{{ usuario.age }}</td>
       <td>
         <p-button icon="pi pi-pencil" class="pe-3" [rounded]="true" [text]="true" [raised]="true" severity="success" (click)="abrirModalAtualizarUsuario(usuario)"></p-button>
-        <button pButton icon="pi pi-trash" type="text" title="Deletar" [rounded]="true" [text]="true" [raised]="true" severity="danger" (click)="deleteUser(usuario.id)"></button>
+        <button pButton icon="pi pi-trash" id="deletarUsuario" type="text" title="Deletar" [rounded]="true" [text]="true" [raised]="true" severity="danger" (click)="deleteUser(usuario.id)"></button>
       </td>
     </tr>
   </ng-template>

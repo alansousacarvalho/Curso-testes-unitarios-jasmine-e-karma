@@ -20,7 +20,6 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [GuardGuard]
   },
   {
     path: 'fix-problems',

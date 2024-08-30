@@ -16,7 +16,7 @@ describe('AlterarUsuarioComponent', () => {
         provideHttpClientTesting()
       ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AlterarUsuarioComponent);
     component = fixture.componentInstance;
@@ -26,4 +26,15 @@ describe('AlterarUsuarioComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Deve fechar a modal ao ativar', () => {
+    let spyFecharModalEmit = spyOn(component.fecharModalChange, 'emit');
+    component.fecharModal();
+    
+    expect(spyFecharModalEmit).toHaveBeenCalled();
+  });
+
+  it('Deve alterar os dados do usuario quando confirmar', () => {
+    component.alterarUsuario();
+  })
 });
